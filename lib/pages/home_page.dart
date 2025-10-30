@@ -66,8 +66,7 @@ class _MiWidgetContadorState extends State<MiWidgetContador> {
                 });
               },
               child: Text("Sumar"),
-            ),
-            SizedBox(height: 10),
+            ), 
             ElevatedButton(
               onPressed: () {
                 setState(() {
