@@ -51,6 +51,16 @@ class _MiWidgetContadorState extends State<MiWidgetContador> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            numero = 0;
+          });
+        },
+        child: Icon(Icons.refresh),
+      ),
+
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
