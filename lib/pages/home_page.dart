@@ -7,6 +7,13 @@ class MiWidgetStateFull extends StatefulWidget {
   State<MiWidgetStateFull> createState() => _MiWidgetStateFullState();
 }
 
+class MiWidgetContador extends StatefulWidget {
+  const MiWidgetContador({super.key});
+
+  @override
+  State<MiWidgetContador> createState() => _MiWidgetContadorState();
+}
+
 class _MiWidgetStateFullState extends State<MiWidgetStateFull> {
   String texto = "Hola soy un statefullwidget";
   @override
@@ -28,6 +35,46 @@ class _MiWidgetStateFullState extends State<MiWidgetStateFull> {
                 setState(() {});
               },
               child: Text("Cambiar texto"),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+
+class _MiWidgetContadorState extends State<MiWidgetContador> {
+  int numero = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              '$numero',
+              style: TextStyle(fontSize: 50),
+            ), 
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  numero++;
+                });
+              },
+              child: Text("Sumar"),
+            ),
+            SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  numero--;
+                });
+              },
+              child: Text("Restar"),
             ),
           ],
         ),
